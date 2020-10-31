@@ -1,7 +1,10 @@
 Role Name
 =========
+[![Build Status](https://travis-ci.com/MayNiklas/ansible-kde-plasma.svg?branch=main)](https://travis-ci.com/MayNiklas/ansible-kde-plasma)
 
-A brief description of the role goes here.
+- making sure kde & plasma packages are up to date
+- setting up .xinitrc
+- enabeling sddm
 
 Requirements
 ------------
