@@ -9,6 +9,7 @@
   loop:
     - plasma
     - kde-applications
+    - packagekit-qt5
 
 - name: Creating .xinitrc from template
   template:
