@@ -1,2 +1,26 @@
 ---
 # tasks file for ansible-kde-plasma
+
+- name: Make sure kde & plasma packages are up to date.
+  become: yes
+  pacman:
+    name: '{{ item }}'
+    state: present
+  loop:
+    - plasma
+    - kde-applications
+
+- name: Make sure 00-keyboard.conf is set to the german keyboard layout
+  template:
+    src: xinitrc.j2
+    dest: /home/{{ ansible_env.USER }}/.xinitrc
+    owner: '{{ ansible_env.USER }}'
+    group: '{{ ansible_env.USER }}'
+    mode: 0755
+
+- name: Enable sddm on startup
+  become: yes
+  systemd:
+    name: sddm
+    enabled: yes
+    masked: no
