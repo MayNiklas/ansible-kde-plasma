@@ -10,6 +10,9 @@
     - plasma
     - kde-applications
     - packagekit-qt5
+    - hunspell
+    - hunspell-de
+    - hunspell-en_US
 
 - name: Creating .xinitrc from template
   template:
